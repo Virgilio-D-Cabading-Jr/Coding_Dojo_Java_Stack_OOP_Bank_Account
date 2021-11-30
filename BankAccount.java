@@ -39,6 +39,30 @@ public class BankAccount {
         return true;
     }
 
+    public boolean withdrawChecking(double withdrawal) {
+        if (withdrawal < 0) {                                       // Cannot withdraw a negative number
+            return false;
+        } else if (withdrawal > this.checkingBalance) {             // Cannot withdraw if insufficient balance
+            return false;
+        }
+        this.checkingBalance -= withdrawal;
+        BankAccount.totalAccountBalance -= withdrawal;
+        return true;
+    }
+
+    public boolean withdrawSavings(double withdrawal) {
+        if (withdrawal < 0) {                                       // Cannot withdraw a negative number
+            return false;
+        } else if (withdrawal > this.savingsBalance) {             // Cannot withdraw if insufficient balance
+            return false;
+        }
+        this.savingsBalance -= withdrawal;
+        BankAccount.totalAccountBalance -= withdrawal;
+        return true;
+    }
+
+
+
     //  //// GET METHODS ////////////////////////////////////////
 
     public long getAccountNumber() {

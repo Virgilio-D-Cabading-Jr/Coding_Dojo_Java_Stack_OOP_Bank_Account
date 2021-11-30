@@ -55,6 +55,17 @@ public class BankAccountApp {
         System.out.println("");
         printBankAccountList(bankAccountList);
         System.out.println("");
+
+        System.out.println("*****************************************************");
+        System.out.println("Withdrawing -100 in checking account 1: " + bankAccountList.get(0).withdrawChecking(-100));    
+        System.out.println("Withdrawing -0.01 in savings account 1: " + bankAccountList.get(0).withdrawSavings(-0.01));
+        System.out.println("Withdrawing 100 in checking account 2: " + bankAccountList.get(1).withdrawChecking(100));
+        System.out.println("Withdrawing 10 in savings account 2: " + bankAccountList.get(1).withdrawSavings(10));
+        System.out.println("Withdrawing 100 in checking account 3: " + bankAccountList.get(2).withdrawChecking(100));
+        System.out.println("Withdrawing 10 in savings account 3: " + bankAccountList.get(2).withdrawSavings(10));
+        System.out.println("");
+        printBankAccountList(bankAccountList);
+        System.out.println("");
     }
     
     public static void printBankAccountList(ArrayList<BankAccount> bankAccountList) {
