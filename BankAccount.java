@@ -21,7 +21,37 @@ public class BankAccount {
 
     //  //// SET METHODS ////////////////////////////////////////
 
+    public boolean depositChecking(double deposit) {
+        if (deposit < 0) {
+            return false;
+        } 
+        this.checkingBalance += deposit;
+        BankAccount.totalAccountBalance += deposit;
+        return true;
+    }
+
+    public boolean depositSavings(double deposit) {
+        if (deposit < 0) {
+            return false;
+        }
+        this.savingsBalance += deposit;
+        BankAccount.totalAccountBalance += deposit;
+        return true;
+    }
+
     //  //// GET METHODS ////////////////////////////////////////
+
+    public long getAccountNumber() {
+        return this.accountNumber;
+    }
+
+    public double getCheckingBalance() {
+        return this.checkingBalance;
+    }
+
+    public double getSavingsBalance() {
+        return this.savingsBalance;
+    }
 
     public static int getNumTotalBankAccounts() {
         return BankAccount.numTotalBankAccounts;
@@ -34,7 +64,7 @@ public class BankAccount {
     //  //// SHOW METHODS ///////////////////////////////////////
 
     public void display() {
-        System.out.printf("---- Bank Account Num: %d ------------\n", this.accountNumber);
-        System.out.printf("Checking Balance: $%.2f || Savings Balance: $%.2f\n", this.checkingBalance, this.savingsBalance);
+        System.out.printf("---- Bank Account Num: %d ------------\n", this.getAccountNumber());
+        System.out.printf("Checking Balance: $%.2f || Savings Balance: $%.2f\n", this.getCheckingBalance(), this.getSavingsBalance());
     }
 }
